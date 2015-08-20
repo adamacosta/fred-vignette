@@ -35,6 +35,10 @@ data(capacity, package = 'fred')
 
 ## Consumer Credit
 
+```{r}
+credit
+```
+
 ```{r, htmlcap = 'Figure 1. Consumer credit balances'}
 credit %>%
     na.locf(fromLast = FALSE, na.rm = FALSE) %>%
@@ -48,6 +52,10 @@ credit %>%
 
 # Fed Balance Sheet
 
+```{r}
+assets
+```
+
 ```{r, htmlcap = 'Figure 2. Fed balance sheet assets'}
 assets %>%
     ggvis(~period, ~assets) %>%
@@ -56,6 +64,10 @@ assets %>%
 ```
 
 ## US Money Supply
+
+```{r}
+money
+```
 
 ```{r, htmlcap = 'Figure 3. Money supply'}
 money %>%
@@ -67,6 +79,10 @@ money %>%
 ```
 
 ## Industrial Production and Capacity
+
+```{r}
+capacity
+```
 
 ```{r, htmlcap = 'Figure 4. Industial capacity utilization'}
 capacity %>%

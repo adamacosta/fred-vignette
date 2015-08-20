@@ -88,6 +88,21 @@ data(money, package = 'fred')
 data(capacity, package = 'fred')</code></pre>
 <div id="consumer-credit" class="section level2">
 <h2>Consumer Credit</h2>
+<pre class="r"><code>credit</code></pre>
+<pre><code>## Source: local data frame [870 x 4]
+## 
+##        period nonrevolving revolving student
+## 1  1943-01-01      6577.83        NA      NA
+## 2  1943-02-01      6463.04        NA      NA
+## 3  1943-03-01      6234.21        NA      NA
+## 4  1943-04-01      6125.75        NA      NA
+## 5  1943-05-01      5936.26        NA      NA
+## 6  1943-06-01      5822.23        NA      NA
+## 7  1943-07-01      5718.37        NA      NA
+## 8  1943-08-01      5638.75        NA      NA
+## 9  1943-09-01      5647.59        NA      NA
+## 10 1943-10-01      5650.74        NA      NA
+## ..        ...          ...       ...     ...</code></pre>
 <pre class="r"><code>credit %&gt;%
     na.locf(fromLast = FALSE, na.rm = FALSE) %&gt;%
     gather(type, amount, -period) %&gt;%
@@ -96,27 +111,27 @@ data(capacity, package = 'fred')</code></pre>
     ggvis(~period, ~amount, stroke = ~type) %&gt;%
     layer_lines() %&gt;%
     add_axis('y', title_offset = 80, title = 'millions USD')</code></pre>
-<div id="plot_id791314271-container" class="ggvis-output-container">
-<div id="plot_id791314271" class="ggvis-output"></div>
+<div id="plot_id787392884-container" class="ggvis-output-container">
+<div id="plot_id787392884" class="ggvis-output"></div>
 <div class="plot-gear-icon">
 <nav class="ggvis-control">
 <a class="ggvis-dropdown-toggle" title="Controls" onclick="return false;"></a>
 <ul class="ggvis-dropdown">
 <li>
 Renderer: 
-<a id="plot_id791314271_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id791314271" data-renderer="svg">SVG</a>
+<a id="plot_id787392884_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id787392884" data-renderer="svg">SVG</a>
  | 
-<a id="plot_id791314271_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id791314271" data-renderer="canvas">Canvas</a>
+<a id="plot_id787392884_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id787392884" data-renderer="canvas">Canvas</a>
 </li>
 <li>
-<a id="plot_id791314271_download" class="ggvis-download" data-plot-id="plot_id791314271">Download</a>
+<a id="plot_id787392884_download" class="ggvis-download" data-plot-id="plot_id787392884">Download</a>
 </li>
 </ul>
 </nav>
 </div>
 </div>
 <script type="text/javascript">
-var plot_id791314271_spec = {
+var plot_id787392884_spec = {
   "data": [
     {
       "name": ".0/group_by1/arrange2_flat",
@@ -277,7 +292,7 @@ var plot_id791314271_spec = {
   },
   "handlers": null
 };
-ggvis.getPlot("plot_id791314271").parseSpec(plot_id791314271_spec);
+ggvis.getPlot("plot_id787392884").parseSpec(plot_id787392884_spec);
 </script>
 <p class="caption">
 Figure 1. Consumer credit balances
@@ -285,31 +300,46 @@ Figure 1. Consumer credit balances
 </div>
 <div id="fed-balance-sheet" class="section level1">
 <h1>Fed Balance Sheet</h1>
+<pre class="r"><code>assets</code></pre>
+<pre><code>## Source: local data frame [661 x 2]
+## 
+##        period assets
+## 1  2002-12-18 720761
+## 2  2002-12-25 733136
+## 3  2003-01-01 732202
+## 4  2003-01-08 724902
+## 5  2003-01-15 721325
+## 6  2003-01-22 737069
+## 7  2003-01-29 714316
+## 8  2003-02-05 720885
+## 9  2003-02-12 714547
+## 10 2003-02-19 731553
+## ..        ...    ...</code></pre>
 <pre class="r"><code>assets %&gt;%
     ggvis(~period, ~assets) %&gt;%
     layer_lines(stroke := 'steelblue') %&gt;%
     add_axis('y', title_offset = 80, title = 'millions USD')</code></pre>
-<div id="plot_id614825277-container" class="ggvis-output-container">
-<div id="plot_id614825277" class="ggvis-output"></div>
+<div id="plot_id425024441-container" class="ggvis-output-container">
+<div id="plot_id425024441" class="ggvis-output"></div>
 <div class="plot-gear-icon">
 <nav class="ggvis-control">
 <a class="ggvis-dropdown-toggle" title="Controls" onclick="return false;"></a>
 <ul class="ggvis-dropdown">
 <li>
 Renderer: 
-<a id="plot_id614825277_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id614825277" data-renderer="svg">SVG</a>
+<a id="plot_id425024441_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id425024441" data-renderer="svg">SVG</a>
  | 
-<a id="plot_id614825277_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id614825277" data-renderer="canvas">Canvas</a>
+<a id="plot_id425024441_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id425024441" data-renderer="canvas">Canvas</a>
 </li>
 <li>
-<a id="plot_id614825277_download" class="ggvis-download" data-plot-id="plot_id614825277">Download</a>
+<a id="plot_id425024441_download" class="ggvis-download" data-plot-id="plot_id425024441">Download</a>
 </li>
 </ul>
 </nav>
 </div>
 </div>
 <script type="text/javascript">
-var plot_id614825277_spec = {
+var plot_id425024441_spec = {
   "data": [
     {
       "name": ".0/arrange1",
@@ -427,40 +457,55 @@ var plot_id614825277_spec = {
   },
   "handlers": null
 };
-ggvis.getPlot("plot_id614825277").parseSpec(plot_id614825277_spec);
+ggvis.getPlot("plot_id425024441").parseSpec(plot_id425024441_spec);
 </script>
 <p class="caption">
 Figure 2. Fed balance sheet assets
 </p>
 <div id="us-money-supply" class="section level2">
 <h2>US Money Supply</h2>
+<pre class="r"><code>money</code></pre>
+<pre><code>## Source: local data frame [2,118 x 7]
+## 
+##        period m1 currency demand other traveler nonM1M2
+## 1  1975-01-06 NA     67.2  203.9   0.5      1.7   260.1
+## 2  1975-01-13 NA     67.4  204.1   0.5      1.7   260.9
+## 3  1975-01-20 NA     67.5  204.1   0.5      1.8   261.5
+## 4  1975-01-27 NA     67.5  204.0   0.5      1.8   262.4
+## 5  1975-02-03 NA     67.4  205.5   0.5      1.8   261.7
+## 6  1975-02-10 NA     67.7  204.5   0.5      1.8   262.8
+## 7  1975-02-17 NA     67.8  204.5   0.5      1.8   264.0
+## 8  1975-02-24 NA     67.9  204.0   0.5      1.8   265.6
+## 9  1975-03-03 NA     67.9  205.1   0.5      1.8   266.3
+## 10 1975-03-10 NA     68.2  206.3   0.6      1.8   267.3
+## ..        ... ..      ...    ...   ...      ...     ...</code></pre>
 <pre class="r"><code>money %&gt;%
     gather(measure, usd, -period) %&gt;%
     mutate(usd = ifelse(is.na(usd), 0, usd)) %&gt;%
     ggvis(~period, ~usd, stroke = ~measure) %&gt;%
     layer_lines() %&gt;%
     add_axis('y', title_offset = 80, title = 'millions USD')</code></pre>
-<div id="plot_id699773773-container" class="ggvis-output-container">
-<div id="plot_id699773773" class="ggvis-output"></div>
+<div id="plot_id471057988-container" class="ggvis-output-container">
+<div id="plot_id471057988" class="ggvis-output"></div>
 <div class="plot-gear-icon">
 <nav class="ggvis-control">
 <a class="ggvis-dropdown-toggle" title="Controls" onclick="return false;"></a>
 <ul class="ggvis-dropdown">
 <li>
 Renderer: 
-<a id="plot_id699773773_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id699773773" data-renderer="svg">SVG</a>
+<a id="plot_id471057988_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id471057988" data-renderer="svg">SVG</a>
  | 
-<a id="plot_id699773773_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id699773773" data-renderer="canvas">Canvas</a>
+<a id="plot_id471057988_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id471057988" data-renderer="canvas">Canvas</a>
 </li>
 <li>
-<a id="plot_id699773773_download" class="ggvis-download" data-plot-id="plot_id699773773">Download</a>
+<a id="plot_id471057988_download" class="ggvis-download" data-plot-id="plot_id471057988">Download</a>
 </li>
 </ul>
 </nav>
 </div>
 </div>
 <script type="text/javascript">
-var plot_id699773773_spec = {
+var plot_id471057988_spec = {
   "data": [
     {
       "name": ".0/group_by1/arrange2_flat",
@@ -621,7 +666,7 @@ var plot_id699773773_spec = {
   },
   "handlers": null
 };
-ggvis.getPlot("plot_id699773773").parseSpec(plot_id699773773_spec);
+ggvis.getPlot("plot_id471057988").parseSpec(plot_id471057988_spec);
 </script>
 <p class="caption">
 Figure 3. Money supply
@@ -629,32 +674,47 @@ Figure 3. Money supply
 </div>
 <div id="industrial-production-and-capacity" class="section level2">
 <h2>Industrial Production and Capacity</h2>
+<pre class="r"><code>capacity</code></pre>
+<pre><code>## Source: local data frame [583 x 5]
+## 
+##        period utilization capacity durable nondurable
+## 1  1967-01-01     89.3902  40.7115      NA         NA
+## 2  1967-02-01     87.9750  40.8973      NA         NA
+## 3  1967-03-01     87.0835  41.0830      NA         NA
+## 4  1967-04-01     87.5089  41.2689      NA         NA
+## 5  1967-05-01     86.3566  41.4547      NA         NA
+## 6  1967-06-01     85.9603  41.6406      NA         NA
+## 7  1967-07-01     85.3833  41.8266      NA         NA
+## 8  1967-08-01     86.6339  42.0126      NA         NA
+## 9  1967-09-01     86.1122  42.1984      NA         NA
+## 10 1967-10-01     86.4325  42.3845      NA         NA
+## ..        ...         ...      ...     ...        ...</code></pre>
 <pre class="r"><code>capacity %&gt;%
     select(period, utilization) %&gt;%
     ggvis(~period, ~utilization) %&gt;%
     layer_lines(stroke := 'steelblue') %&gt;%
     add_axis('y', title_offset = 50, title = 'percent utilization')</code></pre>
-<div id="plot_id765349938-container" class="ggvis-output-container">
-<div id="plot_id765349938" class="ggvis-output"></div>
+<div id="plot_id914109802-container" class="ggvis-output-container">
+<div id="plot_id914109802" class="ggvis-output"></div>
 <div class="plot-gear-icon">
 <nav class="ggvis-control">
 <a class="ggvis-dropdown-toggle" title="Controls" onclick="return false;"></a>
 <ul class="ggvis-dropdown">
 <li>
 Renderer: 
-<a id="plot_id765349938_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id765349938" data-renderer="svg">SVG</a>
+<a id="plot_id914109802_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id914109802" data-renderer="svg">SVG</a>
  | 
-<a id="plot_id765349938_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id765349938" data-renderer="canvas">Canvas</a>
+<a id="plot_id914109802_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id914109802" data-renderer="canvas">Canvas</a>
 </li>
 <li>
-<a id="plot_id765349938_download" class="ggvis-download" data-plot-id="plot_id765349938">Download</a>
+<a id="plot_id914109802_download" class="ggvis-download" data-plot-id="plot_id914109802">Download</a>
 </li>
 </ul>
 </nav>
 </div>
 </div>
 <script type="text/javascript">
-var plot_id765349938_spec = {
+var plot_id914109802_spec = {
   "data": [
     {
       "name": ".0/arrange1",
@@ -772,7 +832,7 @@ var plot_id765349938_spec = {
   },
   "handlers": null
 };
-ggvis.getPlot("plot_id765349938").parseSpec(plot_id765349938_spec);
+ggvis.getPlot("plot_id914109802").parseSpec(plot_id914109802_spec);
 </script>
 <p class="caption">
 Figure 4. Industial capacity utilization
@@ -784,27 +844,27 @@ Figure 4. Industial capacity utilization
     ggvis(~period, ~index, stroke = ~measure) %&gt;%
     layer_lines() %&gt;%
     add_axis('y', title_offset = 80, title = 'index')</code></pre>
-<div id="plot_id263439491-container" class="ggvis-output-container">
-<div id="plot_id263439491" class="ggvis-output"></div>
+<div id="plot_id115681652-container" class="ggvis-output-container">
+<div id="plot_id115681652" class="ggvis-output"></div>
 <div class="plot-gear-icon">
 <nav class="ggvis-control">
 <a class="ggvis-dropdown-toggle" title="Controls" onclick="return false;"></a>
 <ul class="ggvis-dropdown">
 <li>
 Renderer: 
-<a id="plot_id263439491_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id263439491" data-renderer="svg">SVG</a>
+<a id="plot_id115681652_renderer_svg" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id115681652" data-renderer="svg">SVG</a>
  | 
-<a id="plot_id263439491_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id263439491" data-renderer="canvas">Canvas</a>
+<a id="plot_id115681652_renderer_canvas" class="ggvis-renderer-button" onclick="return false;" data-plot-id="plot_id115681652" data-renderer="canvas">Canvas</a>
 </li>
 <li>
-<a id="plot_id263439491_download" class="ggvis-download" data-plot-id="plot_id263439491">Download</a>
+<a id="plot_id115681652_download" class="ggvis-download" data-plot-id="plot_id115681652">Download</a>
 </li>
 </ul>
 </nav>
 </div>
 </div>
 <script type="text/javascript">
-var plot_id263439491_spec = {
+var plot_id115681652_spec = {
   "data": [
     {
       "name": ".0/group_by1/arrange2_flat",
@@ -965,7 +1025,7 @@ var plot_id263439491_spec = {
   },
   "handlers": null
 };
-ggvis.getPlot("plot_id263439491").parseSpec(plot_id263439491_spec);
+ggvis.getPlot("plot_id115681652").parseSpec(plot_id115681652_spec);
 </script>
 <p class="caption">
 Figure 5. Industrial capacity
